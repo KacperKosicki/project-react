@@ -13,7 +13,6 @@ const Column = props => {
       <h2 className={styles.title}>
         <span className={styles.icon + ' fa fa-' + props.icon} /> {props.title}
         <ul className={styles.cards}>
-          {}
           {cards.map(card => (
             <Card key={card.id} title={card.title} />
           ))}
