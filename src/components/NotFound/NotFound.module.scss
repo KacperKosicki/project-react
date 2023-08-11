@@ -1,0 +1,14 @@
+@import '../../styles/settings.scss';
+
+.notFound {
+    font-size: 24px;
+    font-weight: bold;
+    color: $color-light;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.notFoundText {
+    text-align: center;
+    color: coral;
+}
