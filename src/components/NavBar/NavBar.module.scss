@@ -25,7 +25,11 @@
 }
   
 .navLinks li {
-    margin-left: 20px; 
+    margin-left: 20px;
+    
+    .linkActive {
+        color: $color-warning;
+    }
 }
 
 .navLinks a {
@@ -34,4 +38,3 @@
     font-size: 15px;
     font-weight: bold;
 }
-  
