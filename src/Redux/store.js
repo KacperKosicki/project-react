@@ -14,6 +14,10 @@ export const addCard = payload => ({ type: 'ADD_CARD', payload });
 
 export const updateSearchString = searchString => ({ type: 'UPDATE_SEARCHSTRING', payload: searchString });
 
+export const getListById = ({ lists }, listId) => lists.find(list => list.id === listId);
+
+export const getColumnsByList = (state, listId) => state.columns.filter(column => column.listId === listId);
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD_COLUMN':
