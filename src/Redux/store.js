@@ -14,6 +14,8 @@ export const addCard = payload => ({ type: 'ADD_CARD', payload });
 
 export const addList = payload => ({ type: 'ADD_LIST', payload });
 
+export const toggleCardFavorite = cardId => ({ type: 'TOGGLE_CARD_FAVORITE', payload: cardId });
+
 export const updateSearchString = searchString => ({ type: 'UPDATE_SEARCHSTRING', payload: searchString });
 
 export const getListById = ({ lists }, listId) => lists.find(list => list.id === listId);
@@ -33,9 +35,12 @@ const reducer = (state, action) => {
     case 'UPDATE_SEARCHSTRING':
       return {...state, searchString: action.payload
       };
-      case 'ADD_LIST':
-        return {...state, lists: [...state.lists, { ...action.payload, id: shortid() }]
-        };
+    case 'ADD_LIST':
+      return {...state, lists: [...state.lists, { ...action.payload, id: shortid() }]
+      };
+    case 'TOGGLE_CARD_FAVORITE':
+      return {...state, cards: state.cards.map(card => card.id === action.payload ? { ...card, isFavorite: !card.isFavorite } : card ),
+      };
     default:
       return state;
     }
