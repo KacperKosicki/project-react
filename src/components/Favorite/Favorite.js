@@ -5,7 +5,11 @@ import styles from './Favorite.module.scss';
 import Card from '../Card/Card';
 
 const Favorite = () => {
-  const favoriteCards = useSelector(state => state.cards.filter(card => card.isFavorite));
+  const favoriteCards = useSelector(state =>
+    state.cards.filter(card => card.isFavorite)
+  );
+
+  console.log(favoriteCards);
 
   return (
     <div>
@@ -17,7 +21,7 @@ const Favorite = () => {
           ))}
         </ul>
       ) : (
-        <p>No favorite cards...</p>
+        <p className={styles.noCards}>No favorite cards...</p>
       )}
     </div>
   );
