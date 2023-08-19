@@ -19,7 +19,7 @@ const Card = props => {
     <li className={cardClasses}>
       {props.title}
       <button onClick={handleToggleFavorite}>
-        <i className={`fa ${props.isFavorite ? 'fa-star' : 'fa-star-o'}`} />
+        <i className={`fa ${props.isFavorite ? 'fa-trash' : 'fa-star-o'}`} />
       </button>
     </li>
   );
