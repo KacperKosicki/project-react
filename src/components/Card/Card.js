@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Card.module.scss';
 import { useDispatch } from 'react-redux';
-import { toggleCardFavorite } from '../../Redux/store';
+import { toggleCardFavorite } from '../../Redux/cardsRedux';
 import clsx from 'clsx';
 
 const Card = props => {

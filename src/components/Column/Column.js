@@ -3,7 +3,7 @@ import styles from './Column.module.scss';
 import { useSelector } from 'react-redux';
 import Card from '../Card/Card';
 import CardForm from '../CardForm/CardForm';
-import { getFilteredCards } from '../../Redux/store';
+import { getFilteredCards } from '../../Redux/cardsRedux';
 
 const Column = (props) => {
 
