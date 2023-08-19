@@ -8,6 +8,21 @@
     margin: 0 0 $base-size 0;
     border-radius: $radius;
     display: flex;
-    justify-content: space-between;
     font-weight: bold;
+
+    .cardContent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .button {
+        display: flex;
+        gap: $base-size;
+    }
 }
