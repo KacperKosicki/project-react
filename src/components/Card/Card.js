@@ -8,7 +8,9 @@ const Card = props => {
   const dispatch = useDispatch();
 
   const handleToggleFavorite = () => {
-    dispatch(toggleCardFavorite(props.id));
+    if (!props.isFavorite) {
+      dispatch(toggleCardFavorite(props.id));
+    }
   };
 
   const handleRemove = () => {
@@ -24,9 +26,11 @@ const Card = props => {
       <div className={styles.cardContent}>
         <p>{props.title}</p>
         <div className={styles.button}>
-          <button onClick={handleToggleFavorite}>
-            <i className='fa fa-star-o' />
-          </button>
+          {!props.isFavorite && (
+            <button onClick={handleToggleFavorite}>
+              <i className="fa fa-star-o" />
+            </button>
+          )}
           <button onClick={handleRemove}>
             <i className="fa fa-trash" />
           </button>
